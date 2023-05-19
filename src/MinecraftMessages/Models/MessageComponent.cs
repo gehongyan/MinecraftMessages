@@ -40,7 +40,7 @@ public class MessageComponent
     /// <summary>
     ///     Gets or sets whether the component is strikethrough.
     /// </summary>
-    public bool? StrikeThrough { get; set; }
+    public bool? Strikethrough { get; set; }
 
     /// <summary>
     ///     Gets or sets whether the component is obfuscated.
@@ -155,6 +155,28 @@ public class MessageComponent
     public MessageComponent WithUnderlined(bool isUnderlined = true)
     {
         Underlined = isUnderlined;
+        return this;
+    }
+
+    /// <summary>
+    ///     Sets whether the component is strikethrough.
+    /// </summary>
+    /// <param name="isStrikethrough"> Whether the component is strike through. </param>
+    /// <returns> The current instance of <see cref="MessageComponent" />. </returns>
+    public MessageComponent WithStrikethrough(bool isStrikethrough = true)
+    {
+        Strikethrough = isStrikethrough;
+        return this;
+    }
+
+    /// <summary>
+    ///     Sets whether the component is obfuscated.
+    /// </summary>
+    /// <param name="isObfuscated"> Whether the component is obfuscated. </param>
+    /// <returns> The current instance of <see cref="MessageComponent" />. </returns>
+    public MessageComponent WithObfuscated(bool isObfuscated = true)
+    {
+        Obfuscated = isObfuscated;
         return this;
     }
 
