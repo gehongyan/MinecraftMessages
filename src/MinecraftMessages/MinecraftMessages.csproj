@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <VersionPrefix>0.1.0</VersionPrefix>
+        <!--        <VersionSuffix>rc</VersionSuffix>-->
+        <RootNamespace>Minecraft.Messages</RootNamespace>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <Authors>gehongyan</Authors>
+        <PackageTags>minecraft;mc</PackageTags>
+        <PackageProjectUrl>https://github.com/gehongyan/MinecraftMessages</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/gehongyan/MinecraftMessages.git</RepositoryUrl>
+        <Company>gehongyan</Company>
+        <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">net7.0;net6.0;net462;netstandard2.0;netstandard2.1</TargetFrameworks>
+        <TargetFrameworks Condition=" '$(OS)' != 'Windows_NT' ">net7.0;net6.0;netstandard2.0;netstandard2.1</TargetFrameworks>
+        <NoWarn>NU1803</NoWarn>
+        <PackageVersion>$(Version)</PackageVersion>
+        <WarningLevel>6</WarningLevel>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="System.Text.Json" Version="7.0.2" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
+        <Reference Include="System.Net.Http" />
+    </ItemGroup>
+
+</Project>
